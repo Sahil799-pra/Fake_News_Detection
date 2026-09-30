@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fake News Detection</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="page-shell">
+        <div class="app-card">
+            <div class="header-block">
+                <span class="badge">AI News Verifier</span>
+                <h1>Fake or Real News Detection</h1>
+                <p>Paste a news article and get a quick prediction based on the trained model.</p>
+            </div>
+
+            <label for="news" class="label">Enter News Text</label>
+            <textarea id="news" placeholder="Type or paste the article here..."></textarea>
+
+            <button onclick="checkNews()">Predict News</button>
+
+            <div id="result" class="result-box" aria-live="polite">
+                Your result will appear here.
+            </div>
+
+            <div id="analysis" class="analysis-box">
+                AI explanation will appear here.
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+
