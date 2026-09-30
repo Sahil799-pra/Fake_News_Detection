@@ -53,7 +53,6 @@ Fake_News_HCL/
 ├── .gitignore
 ├── README.md
 └── .DS_Store
-```
 
 ## How to Run
 

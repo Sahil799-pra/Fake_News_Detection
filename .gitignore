@@ -16,6 +16,9 @@ backend/*.pkl
 backend/*.joblib
 backend/*.model
 
+# Dataset files
+backend/data/
+
 # Editors / IDE
 .vscode/
 .idea/
