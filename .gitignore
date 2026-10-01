@@ -1,12 +1,15 @@
 # Python
 __pycache__/
+**/__pycache__/
 *.py[cod]
 *.pyo
 *.pyd
 .venv/
 venv/
+backend/venv/
 .env
 .env.*
+!.env.example
 .pytest_cache/
 .mypy_cache/
 .ruff_cache/
@@ -15,9 +18,16 @@ venv/
 backend/*.pkl
 backend/*.joblib
 backend/*.model
+backend/model.pkl
+backend/vectorizer.pkl
 
 # Dataset files
 backend/data/
+backend/data/*.csv
+
+# Project runtime/local files
+backend/__pycache__/
+backend/.DS_Store
 
 # Editors / IDE
 .vscode/
@@ -25,4 +35,6 @@ backend/data/
 
 # OS files
 .DS_Store
+**/.DS_Store
 Thumbs.db
+*.log

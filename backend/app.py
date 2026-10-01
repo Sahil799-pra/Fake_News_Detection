@@ -81,11 +81,19 @@ def predict():
     model_prediction = "Real" if label == 1 else "Fake"
     confidence = round(float(proba[label]) * 100, 2)
 
+    # Keep the trained ML model as the primary result.
+    # Gemini can provide an AI opinion, but should not silently override the model
+    # for ordinary real-news text.
     prediction = model_prediction
+    ai_prediction = ""
     if GEMINI_API_KEY:
         ai_prediction = classify_with_gemini(text)
-        if ai_prediction:
-            prediction = ai_prediction
+
+    # Only let Gemini override when the model is uncertain and the AI label is
+    # confidently different. This prevents a separate AI call from flipping normal
+    # real-news text to fake.
+    if ai_prediction and confidence < 70 and ai_prediction != model_prediction:
+        prediction = ai_prediction
 
     ai_explanation = ""
     if GEMINI_API_KEY:
